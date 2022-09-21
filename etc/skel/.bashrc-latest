@@ -43,10 +43,10 @@ alias l.="ls -A | egrep '^\.'"
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw='pwd'
-alias udpate='sudo pacman -Syyu'
-alias upate='sudo pacman -Syyu'
-alias updte='sudo pacman -Syyu'
-alias updqte='sudo pacman -Syyu'
+alias udpate='yay -Syyu'
+alias upate='yay -Syyu'
+alias updte='yay -Syyu'
+alias updqte='yay -Syyu'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -69,7 +69,7 @@ alias egrep='egrep --color=auto'
 alias update='yay -Syyuu'
 
 #clean pacman cache
-alias clean='sudo pacman -Qtdq | sudo pacman -Rns - && sudo pacman -Scc'
+alias clean='yay -Qtdq | yay -Rns - && yay -Scc'
 
 #continue download
 alias wget="wget -c"
@@ -84,8 +84,6 @@ alias sysd='systemctl list-unit-files --state=disabled'
 alias ls='ls --color=auto'
 
 #grub update
-alias clean-grub-efi='sudo umount /boot/efi && sudo rm -r /boot/efi && sudo rm -r /boot/grub && sudo mkdir /boot/efi' 
-## You will need to mount your boot drive Example "sudo mount /dev/sda1 /boot/efi" ##
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias install-grub-efi='sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck'
 
@@ -126,14 +124,11 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
 
 #iso and version used to install ADK-Linux
-alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
-alias isoo="cat /etc/dev-rel"
+alias iso="cat /version"
+alias isoo="cat /version"
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-
-#clear
-alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
 
 #search content with ripgrep
 alias rg="rg --sort path"
@@ -143,41 +138,24 @@ alias jctl="journalctl -p 3 -xb"
 
 #nano for important configuration files
 #know what you do in these files
-alias nlxdm="sudo $EDITOR /etc/lxdm/lxdm.conf"
-alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
 alias npacman="sudo $EDITOR /etc/pacman.conf"
 alias ngrub="sudo $EDITOR /etc/default/grub"
 alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias narcomirrorlist="sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist"
-alias nsddm="sudo $EDITOR /etc/sddm.conf"
+alias nadkmirrorlist="sudo $EDITOR /etc/pacman.d/adklinux-mirrorlist"
 alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias nfstab="sudo $EDITOR /etc/fstab"
-alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
 alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
-alias ngnupgconf="sudo $EDITOR /etc/pacman.d/gnupg/gpg.conf"
 alias nhosts="sudo $EDITOR /etc/hosts"
 alias nhostname="sudo $EDITOR /etc/hostname"
 alias nb="$EDITOR ~/.bashrc"
 alias nz="$EDITOR ~/.zshrc"
-alias nf="$EDITOR ~/.config/fish/config.fish"
-alias nneofetch="$EDITOR ~/.config/neofetch/config.conf"
 
 #reading logs with bat
-alias lcalamares="bat /var/log/Calamares.log"
 alias lpacman="bat /var/log/pacman.log"
 alias lxorg="bat /var/log/Xorg.0.log"
 alias lxorgo="bat /var/log/Xorg.0.log.old"
-
-#gpg
-#verify signature for isos
-alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-#receive the key of a developer
-alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
