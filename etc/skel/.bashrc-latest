@@ -124,8 +124,8 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
 
 #iso and version used to install ADK-Linux
-alias iso="cat /version"
-alias isoo="cat /version"
+alias iso="cat /etc/dev-rel"
+alias isoo="cat /etc/dev-rel"
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
@@ -152,10 +152,10 @@ alias nhostname="sudo $EDITOR /etc/hostname"
 alias nb="$EDITOR ~/.bashrc"
 alias nz="$EDITOR ~/.zshrc"
 
-#reading logs with bat
-alias lpacman="bat /var/log/pacman.log"
-alias lxorg="bat /var/log/Xorg.0.log"
-alias lxorgo="bat /var/log/Xorg.0.log.old"
+#reading logs with cat
+alias lpacman="cat /var/log/pacman.log"
+alias lxorg="cat /var/log/Xorg.0.log"
+alias lxorgo="cat /var/log/Xorg.0.log.old"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
