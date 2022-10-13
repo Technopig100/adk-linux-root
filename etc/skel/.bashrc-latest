@@ -7,13 +7,6 @@ export VISUAL='nano'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
-
 PS1='[\u@\h \W]\$ '
 
 # If not running interactively, don't do anything
@@ -69,7 +62,7 @@ alias egrep='egrep --color=auto'
 alias update='yay -Syyuu'
 
 #clean pacman cache
-alias clean='yay -Qtdq | yay -Rns - && yay -Scc'
+alias clean='yay -Scc'
 
 #continue download
 alias wget="wget -c"
@@ -124,8 +117,8 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
 
 #iso and version used to install ADK-Linux
-alias iso="cat /etc/dev-rel"
-alias isoo="cat /etc/dev-rel"
+alias iso="bat /etc/dev-rel"
+alias isoo="bat /etc/dev-rel"
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
@@ -146,16 +139,15 @@ alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
 alias nadkmirrorlist="sudo $EDITOR /etc/pacman.d/adklinux-mirrorlist"
 alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias nfstab="sudo $EDITOR /etc/fstab"
-alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
 alias nhosts="sudo $EDITOR /etc/hosts"
 alias nhostname="sudo $EDITOR /etc/hostname"
 alias nb="$EDITOR ~/.bashrc"
 alias nz="$EDITOR ~/.zshrc"
 
-#reading logs with cat
-alias lpacman="cat /var/log/pacman.log"
-alias lxorg="cat /var/log/Xorg.0.log"
-alias lxorgo="cat /var/log/Xorg.0.log.old"
+#reading logs with bat
+alias lpacman="bat /var/log/pacman.log"
+alias lxorg="bat /var/log/Xorg.0.log"
+alias lxorgo="bat /var/log/Xorg.0.log.old"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
@@ -198,13 +190,6 @@ alias btrfsli="sudo btrfs su li / -t"
 
 #search with grep
 alias pt='grep -Ril'
-
-#make ls look good
-alias xls="exa -a --icons --color=always --group-directories-first"
-alias xll="exa -lag --icons --color=always --group-directories-first --octal-permissions"
-
-#open in ranger
-alias rg='ranger'
 
 ##this alias is only to be used in a live enviroment ##
 alias rescue='/usr/local/bin/adk-linux_rescue'
