@@ -122,6 +122,7 @@ alias isoo="bat /etc/dev-rel"
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias pacdn='pacman -Qqn | pacman -Sw -'
 
 #search content with ripgrep
 alias rg="rg --sort path"

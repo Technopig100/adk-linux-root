@@ -63,6 +63,7 @@ alias update='yay -Syyuu'
 
 #clean pacman cache
 alias clean='yay -Scc'
+alias pacdn='pacman -Qqn | pacman -Sw -'
 
 #continue download
 alias wget="wget -c"
