@@ -46,9 +46,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-#adk-linux news and info
-alias News="nano /etc/ase/adk-news.txt"
-
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
@@ -143,7 +140,6 @@ alias nfstab="sudo $EDITOR /etc/fstab"
 alias nhosts="sudo $EDITOR /etc/hosts"
 alias nhostname="sudo $EDITOR /etc/hostname"
 alias nb="$EDITOR ~/.bashrc"
-alias nz="$EDITOR ~/.zshrc"
 
 #reading logs with bat
 alias lpacman="bat /var/log/pacman.log"
