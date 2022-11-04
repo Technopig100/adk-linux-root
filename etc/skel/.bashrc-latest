@@ -86,7 +86,6 @@ alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 #copy shell configs
 alias cb='cp /etc/skel/.bashrc ~/.bashrc && exec bash'
-alias cz='cp /etc/skel/.zshrc ~/.zshrc && echo "Copied."'
 
 #hardware info --short
 alias hw="hwinfo --short"
