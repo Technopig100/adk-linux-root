@@ -141,7 +141,7 @@ alias lxorgo="bat /var/log/Xorg.0.log.old"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
-alias fixkeys="/usr/local/bin/fix-pacman-databases-and-keys.sh"
+alias fixkeys="/usr/bin/fix-pacman-databases-and-keys.sh"
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
@@ -179,9 +179,6 @@ alias btrfsli="sudo btrfs su li / -t"
 
 #search with grep
 alias pt='grep -Ril'
-
-##this alias is only to be used in a live enviroment ##
-alias rescue='/usr/local/bin/adk-linux_rescue'
 
 #if you would like to have your own aliases then add them to .bashrc-personal file
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
