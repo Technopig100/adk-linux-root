@@ -58,6 +58,9 @@ alias clean='yay -Scc'
 #download installed packages but don't install
 alias pacdn='sudo pacman -Qqn | sudo pacman -Sw -'
 
+#fixes
+alias fixkeys="/usr/bin/fix-pacman-databases-and-keys.sh"
+
 #continue download
 alias wget="wget -c"
 
@@ -77,6 +80,7 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias apt-get='man pacman'
 alias apt='man pacman'
 alias please='sudo'
+alias adk='sudo pamac'
 
 #copy/paste all content of /etc/skel over to home folder - backup of config created - beware
 alias skel='[ -d ~/.config ] || mkdir ~/.config && cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -RTrf /etc/skel/ ~'
@@ -138,8 +142,6 @@ alias nhostname="sudo $EDITOR /etc/hostname"
 alias lpacman="bat /var/log/pacman.log"
 alias lxorg="bat /var/log/Xorg.0.log"
 alias lxorgo="bat /var/log/Xorg.0.log.old"
-
-alias fixkeys="/usr/bin/fix-pacman-databases-and-keys.sh"
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
