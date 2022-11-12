@@ -1,1 +1,1 @@
-# ADK-Linux Root settings
+# ADK-Linux Root .bashrc settings

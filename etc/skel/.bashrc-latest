@@ -103,9 +103,6 @@ alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pac
 #experimental - best option for the moment
 alias ram='rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist'
 
-#mount Public for virtualbox
-alias mvb='sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public'
-
 #recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
@@ -142,7 +139,6 @@ alias lxorgo="bat /var/log/Xorg.0.log.old"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
-alias fixkeys="/usr/bin/fix-pacman-databases-and-keys.sh"
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
