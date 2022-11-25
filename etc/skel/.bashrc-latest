@@ -140,6 +140,13 @@ alias lxorgo="bat /var/log/Xorg.0.log.old"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
+alias fix-keys='adklinux-fkeys & exit'
+alias fixkeys='adklinux-fkeys & exit'
+alias fix-key="adklinux-fkeys & exit"
+alias fixkey="adklinux-fkeys & exit"
+alias key-fix="adklinux-fkeys & exit"
+alias keysfix="adklinux-fkeys & exit"
+alias keys-fix="adklinux-fkeys & exit"
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
