@@ -140,13 +140,13 @@ alias lxorgo="bat /var/log/Xorg.0.log.old"
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
-alias fix-keys='adklinux-fkeys & exit'
-alias fixkeys='adklinux-fkeys & exit'
-alias fix-key="adklinux-fkeys & exit"
-alias fixkey="adklinux-fkeys & exit"
-alias key-fix="adklinux-fkeys & exit"
-alias keysfix="adklinux-fkeys & exit"
-alias keys-fix="adklinux-fkeys & exit"
+alias fix-keys='/usr/share/adklinux-fkeys/scripts/fix-pacman-databases-and-keys.sh'
+alias fixkeys='/usr/share/adklinux-fkeys/scripts/fix-pacman-databases-and-keys.sh'
+alias fix-key='/usr/share/adklinux-fkeys/scripts/fix-pacman-databases-and-keys.sh'
+alias fixkey='/usr/share/adklinux-fkeys/scripts/fix-pacman-databases-and-keys.sh'
+alias key-fix='/usr/share/adklinux-fkeys/scripts/fix-pacman-databases-and-keys.sh'
+alias keysfix='/usr/share/adklinux-fkeys/scripts/fix-pacman-databases-and-keys.sh'
+alias keys-fix='/usr/share/adklinux-fkeys/scripts/fix-pacman-databases-and-keys.sh'
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
