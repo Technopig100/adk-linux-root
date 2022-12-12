@@ -173,8 +173,3 @@ alias btrfsli="sudo btrfs su li / -t"
 
 #search with grep
 alias pt='grep -Ril'
-
-#if you would like to have your own aliases then add them to .bashrc-personal file
-[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
-
-neofetch
