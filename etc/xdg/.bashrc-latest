@@ -43,8 +43,8 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 #pacman unlock
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-alias pacmanlock="sudo rm /var/lib/pacman/db.lck"
+alias unlock="rm /var/lib/pacman/db.lck"
+alias pacmanlock="rm /var/lib/pacman/db.lck"
 
 #refesh bash
 alias refresh="source ~/.bashrc"
@@ -56,7 +56,7 @@ alias update='pacman -Syyuu'
 alias clean='pacman -Scc'
 
 #download installed packages but don't install
-alias pacdn='sudo pacman -Qqn | sudo pacman -Sw -'
+alias pacdn='pacman -Qqn | pacman -Sw -'
 
 #fixes
 alias fixkeys="/usr/bin/fix-pacman-databases-and-keys.sh"
@@ -73,14 +73,14 @@ alias sysd='systemctl list-unit-files --state=disabled'
 alias sysf="systemctl list-units --failed"
 
 #grub update
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-## alias install-grub-efi='sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck'
+alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
+## alias install-grub-efi=' grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck'
 
 # Help people new to ADK-Linux
 alias apt-get='man pacman'
 alias apt='man pacman'
-alias please='sudo'
-alias adk='sudo pamac'
+alias please='echo "NO!"'
+alias adk='pamac'
 
 #backup contents of /etc/skel to hidden backup folder in home/user
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
@@ -109,7 +109,7 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 
 #iso and version used to install ADK-Linux
 alias iso="bat /etc/dev-rel"
-alias isoo="bat /etc/dev-rel"
+alias isoo="bat /etc/adklinux/info"
 
 #Cleanup orphaned packages
 alias cleanup='pacman -Rns $(pacman -Qtdq)'
@@ -122,15 +122,15 @@ alias jctl="journalctl -p 3 -xb"
 
 #nano for important configuration files
 #know what you do in these files
-alias npacman="sudo $EDITOR /etc/pacman.conf"
-alias ngrub="sudo $EDITOR /etc/default/grub"
-alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
-alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias nadkmirrorlist="sudo $EDITOR /etc/pacman.d/adklinux-mirrorlist"
-alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
-alias nfstab="sudo $EDITOR /etc/fstab"
-alias nhosts="sudo $EDITOR /etc/hosts"
-alias nhostname="sudo $EDITOR /etc/hostname"
+alias npacman="$EDITOR /etc/pacman.conf"
+alias ngrub="$EDITOR /etc/default/grub"
+alias nmkinitcpio="$EDITOR /etc/mkinitcpio.conf"
+alias nmirrorlist="$EDITOR /etc/pacman.d/mirrorlist"
+alias nadkmirrorlist="$EDITOR /etc/pacman.d/adklinux-mirrorlist"
+alias nsddmk="$EDITOR /etc/sddm.conf.d/kde_settings.conf"
+alias nfstab="$EDITOR /etc/fstab"
+alias nhosts="$EDITOR /etc/hosts"
+alias nhostname="$EDITOR /etc/hostname"
 
 #reading logs with bat
 alias lpacman="bat /var/log/pacman.log"
@@ -168,8 +168,8 @@ ex ()
 }
 
 #btrfs aliases
-alias btrfsfs="sudo btrfs filesystem df /"
-alias btrfsli="sudo btrfs su li / -t"
+alias btrfsfs="btrfs filesystem df /"
+alias btrfsli="btrfs su li / -t"
 
 #search with grep
 alias pt='grep -Ril'
